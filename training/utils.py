@@ -1,7 +1,6 @@
 import os
 import logging
 import numpy as np
-import matplotlib.pyplot as plt
 
 def create_logger(save_path='', file_type='', level='debug', console=True):
     if level == 'debug':
@@ -45,6 +44,9 @@ def plot_single_curve(path, name, point, freq=1, xlabel='Epoch',ylabel=None):
     plt.close()
 
 def plot_curves(path, name, point_list, curve_names=None, freq=1, xlabel='Epoch',ylabel=None):
+    # Lazy import matplotlib - only needed for training visualization, not inference
+    import matplotlib.pyplot as plt
+    
     if curve_names is None:
         curve_names = [''] * len(point_list)
     else:

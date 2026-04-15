@@ -13,7 +13,8 @@ from models.modules.pseudo_gt import expand_area
 from models.model import get_discriminator, get_generator, vgg16
 from models.loss import GANLoss, MakeupLoss, ComposePGT, AnnealingComposePGT
 
-from training.utils import plot_curves
+# NOTE: plot_curves is only imported when needed during training, not inference
+# This avoids requiring matplotlib as a dependency for API inference
 
 class Solver():
     def __init__(self, config, args, logger=None, inference=False):
@@ -390,6 +391,9 @@ class Solver():
             print('='*40)
 
     def plot_loss(self):
+        # Import only when needed for training visualization
+        from training.utils import plot_curves
+        
         G_losses = []; G_names = []
         D_A_losses = []; D_A_names = []
         D_B_losses = []; D_B_names = []

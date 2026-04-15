@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: glowup-makeup-api
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfile: ./Dockerfile
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: CUDA_VISIBLE_DEVICES
+        value: "0"
+    healthCheckPath: /health
+    healthCheckInterval: 30
