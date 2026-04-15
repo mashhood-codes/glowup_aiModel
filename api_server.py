@@ -1,7 +1,6 @@
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from PIL import Image
 import torch
 import time
@@ -18,13 +17,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="EleGANt Makeup Transfer API")
-
-# Trust Render's reverse proxy headers for HTTPS
-app.add_middleware(
-    TrustedHostMiddleware,
-    allowed_hosts=["*"],
-    trusted_hosts=["*"],
-)
 
 app.add_middleware(
     CORSMiddleware,
