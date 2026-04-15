@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.0.1-cuda11.8-runtime-ubuntu22.04
+FROM pytorch/pytorch:2.0.1-cpu
 
 WORKDIR /app
 
