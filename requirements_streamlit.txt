@@ -5,7 +5,7 @@ python-multipart==0.0.6
 
 # Computer Vision & Model Config (PyTorch installed separately in Dockerfile)
 torchvision==0.15.2
-opencv-python==4.8.1.78
+opencv-python-headless==4.8.1.78  # Headless version for serverless/headless environments (no GUI deps)
 fvcore>=0.1.5.post20220915  # For model config
 
 # Image & Scientific Computing
