@@ -1,11 +1,15 @@
-streamlit==1.28.1
+# FastAPI & Web Server
 fastapi==0.104.1
-uvicorn==0.24.0
-torch==2.0.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Computer Vision & Model Config (PyTorch installed separately in Dockerfile)
 torchvision==0.15.2
-pillow==10.1.0
 opencv-python==4.8.1.78
+fvcore>=0.1.5.post20220915  # For model config
+
+# Image & Scientific Computing
+pillow==10.1.0
 numpy==1.24.3
 scipy==1.11.4
 scikit-image==0.22.0
-python-multipart==0.0.6
