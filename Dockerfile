@@ -8,13 +8,12 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     curl \
     build-essential \
+    cmake \
     libsm6 \
     libxext6 \
     libxrender-dev \
     libgomp1 \
     libglib2.0-0 \
-    libxext6 \
-    libsm6 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install Python dependencies
